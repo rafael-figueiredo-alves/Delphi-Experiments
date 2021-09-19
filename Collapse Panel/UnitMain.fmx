@@ -13,10 +13,11 @@ object Form2: TForm2
     ItemEditAppearanceClassName = 'TDynamicAppearance'
     HeaderAppearanceClassName = 'TListHeaderObjects'
     FooterAppearanceClassName = 'TListHeaderObjects'
-    Position.X = 80.000000000000000000
-    Position.Y = 48.000000000000000000
-    Size.Width = 393.000000000000000000
-    Size.Height = 409.000000000000000000
+    OnUpdateObjects = ListView1UpdateObjects
+    AllowSelection = False
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     ItemAppearance.ItemHeight = 40
@@ -70,10 +71,12 @@ object Form2: TForm2
         AppearanceClassName = 'TTextObjectAppearance'
       end>
     ItemAppearanceObjects.FooterObjects.Text.Visible = False
+    OnItemClickEx = ListView1ItemClickEx
+    ShowSelection = False
   end
   object Button1: TButton
-    Position.X = 360.000000000000000000
-    Position.Y = 8.000000000000000000
+    Position.X = 544.000000000000000000
+    Position.Y = 448.000000000000000000
     TabOrder = 1
     Text = 'Button1'
     OnClick = Button1Click
@@ -109,5 +112,11 @@ object Form2: TForm2
     Size.Width = 24.000000000000000000
     Size.Height = 24.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
+  end
+  object FloatAnimation1: TFloatAnimation
+    Duration = 0.200000002980232200
+    StartValue = 0.000000000000000000
+    StopValue = 0.000000000000000000
   end
 end
