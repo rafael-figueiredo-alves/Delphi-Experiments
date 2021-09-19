@@ -1,0 +1,113 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Position.X = 80.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 393.000000000000000000
+    Size.Height = 409.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ItemAppearance.ItemHeight = 40
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 231.000000000000000000
+        Appearance.Height = 25.000000000000000000
+        Appearance.PlaceOffset.X = 16.000000000000000000
+        Appearance.PlaceOffset.Y = 8.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Image2'
+        AppearanceClassName = 'TImageObjectAppearance'
+        Appearance.Width = 24.000000000000000000
+        Appearance.Height = 24.000000000000000000
+        Appearance.PlaceOffset.X = 336.000000000000000000
+        Appearance.PlaceOffset.Y = 8.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text3'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 343.000000000000000000
+        Appearance.Height = 25.000000000000000000
+        Appearance.Visible = False
+        Appearance.PlaceOffset.X = 16.000000000000000000
+        Appearance.PlaceOffset.Y = 48.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text4'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 343.000000000000000000
+        Appearance.Height = 41.000000000000000000
+        Appearance.Visible = False
+        Appearance.PlaceOffset.X = 16.000000000000000000
+        Appearance.PlaceOffset.Y = 120.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text5'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 343.000000000000000000
+        Appearance.Height = 33.000000000000000000
+        Appearance.Visible = False
+        Appearance.PlaceOffset.X = 16.000000000000000000
+        Appearance.PlaceOffset.Y = 80.000000000000000000
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    ItemAppearanceObjects.FooterObjects.Text.Visible = False
+  end
+  object Button1: TButton
+    Position.X = 360.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 1
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+        Width = 24
+        Height = 24
+        PNG = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          019A49444154484BED93BD4BC34018C6DFBB561321AD5611534771908252A8A3
+          1FB35041878A9B76EBE2EE64E99FE0E0E2D6B5157410A48343C1D90A82630745
+          92C5EF8289D09E77D7B7A61F49B53ADA1F1CF7DE93F03CE17D2FD0A7CF9F21B8
+          03A4D3346AEAB3B4EA9B12C79AAF5ABED2CD6BC8646AF2B907D33BFB4AD05233
+          BCDCAA2B90B59E437B37F98D0F71F04989139DD99CE38708A1CC2F1605189FAC
+          6863467CFE168A4586AFB520CD6DE59810B24D0868B816FCEAFB8071797A2EDE
+          E13E751A5FDE463866EA4B8944EEEB431A4412B9C1614BCD13202B2839104862
+          E50474215C1E7D586C0E11E643234F47DC6815A51678DFAB583A01A2E758BA21
+          43C49C445BD4D0E389973992C5DD0990030530EA275764BB64CFDDDA82306067
+          2F8A2D862E717ACB072906AABF05427C504154DB0910A0BB58BBC00A015B592F
+          1DA66C14DA66C0AF64296C5CD418B947A5075841B395B5623669A120E91CF2AF
+          42DCCD05EEB7A8A7106F73817B80E04721DDCD05DE0182AE21DF9B0B3AFED00E
+          F8ED32E3B1BB898A4629A31A636C99AB07AFAA9D6ABE2D7DFE2D009F08B3A935
+          5E10B4CF0000000049454E44AE426082}
+        FileName = 
+          'C:\Meus Projetos\Delphi-Experiments\Collapse Panel\Abre_comboBox' +
+          '.png'
+      end>
+    Position.X = 520.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 24.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+  end
+end
