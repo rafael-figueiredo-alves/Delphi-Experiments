@@ -9,6 +9,9 @@
         <Projects Include="Factory Method\FactoryMethod.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Prototype\Prototype.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="FactoryMethod:Make">
         <MSBuild Projects="Factory Method\FactoryMethod.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Prototype">
+        <MSBuild Projects="Prototype\Prototype.dproj"/>
+    </Target>
+    <Target Name="Prototype:Clean">
+        <MSBuild Projects="Prototype\Prototype.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Prototype:Make">
+        <MSBuild Projects="Prototype\Prototype.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AbstractFactory;FactoryMethod"/>
+        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean"/>
+        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make"/>
+        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
