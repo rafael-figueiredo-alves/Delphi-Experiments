@@ -1,0 +1,111 @@
+object Form9: TForm9
+  Left = 0
+  Top = 0
+  Caption = 'Composite'
+  ClientHeight = 261
+  ClientWidth = 574
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 32.000000000000000000
+    Position.Y = 48.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 136.000000000000000000
+    Position.Y = 48.000000000000000000
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 240.000000000000000000
+    Position.Y = 48.000000000000000000
+  end
+  object Edit4: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 344.000000000000000000
+    Position.Y = 48.000000000000000000
+  end
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 32.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'C'#243'digo:'
+    TabOrder = 4
+  end
+  object Label2: TLabel
+    Position.X = 136.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Produto:'
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Position.X = 240.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Quantidade:'
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Position.X = 344.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Pre'#231'o:'
+    TabOrder = 7
+  end
+  object Button1: TButton
+    Position.X = 448.000000000000000000
+    Position.Y = 48.000000000000000000
+    TabOrder = 8
+    Text = 'Adicionar'
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 32.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 497.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Viewport.Width = 493.000000000000000000
+    Viewport.Height = 125.000000000000000000
+  end
+  object Label5: TLabel
+    Position.X = 344.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Valor Total:'
+    TabOrder = 10
+  end
+  object Label6: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 408.000000000000000000
+    Position.Y = 224.000000000000000000
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Trailing
+    Text = 'R$ 0,00'
+    TabOrder = 11
+  end
+end
