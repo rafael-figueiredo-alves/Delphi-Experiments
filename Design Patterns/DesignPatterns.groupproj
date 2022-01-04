@@ -27,6 +27,12 @@
         <Projects Include="Composite\Composite.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Decorator\Decorator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Facade\Facade.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -107,14 +113,32 @@
     <Target Name="Composite:Make">
         <MSBuild Projects="Composite\Composite.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Decorator">
+        <MSBuild Projects="Decorator\Decorator.dproj"/>
+    </Target>
+    <Target Name="Decorator:Clean">
+        <MSBuild Projects="Decorator\Decorator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Decorator:Make">
+        <MSBuild Projects="Decorator\Decorator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Facade">
+        <MSBuild Projects="Facade\Facade.dproj"/>
+    </Target>
+    <Target Name="Facade:Clean">
+        <MSBuild Projects="Facade\Facade.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Facade:Make">
+        <MSBuild Projects="Facade\Facade.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite"/>
+        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean"/>
+        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make"/>
+        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
