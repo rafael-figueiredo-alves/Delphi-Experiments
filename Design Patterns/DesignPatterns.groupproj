@@ -45,6 +45,9 @@
         <Projects Include="Command\Command.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Interpreter\Interpreter.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -179,14 +182,23 @@
     <Target Name="Command:Make">
         <MSBuild Projects="Command\Command.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Interpreter">
+        <MSBuild Projects="Interpreter\Interpreter.dproj"/>
+    </Target>
+    <Target Name="Interpreter:Clean">
+        <MSBuild Projects="Interpreter\Interpreter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Interpreter:Make">
+        <MSBuild Projects="Interpreter\Interpreter.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command"/>
+        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command;Interpreter"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean"/>
+        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean;Interpreter:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make"/>
+        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make;Interpreter:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
