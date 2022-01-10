@@ -20,6 +20,7 @@ type
    Function AddColleague (Value : iColleague) : iMediator;
    Function EnviarPedido (FOrigem, FDestino : iColleague; pedido: string) : iMediator;
    Function RemoveColleague (Value: string) : iMediator;
+   Function LiberarObjetos : iMediator;
  end;
 
  iDisplay <t> = interface

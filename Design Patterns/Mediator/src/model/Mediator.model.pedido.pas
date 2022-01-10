@@ -8,7 +8,7 @@ uses
 Type
   TModelPedido = Class(TInterfacedObject, iColleague, iDisplay<iColleague>)
   Private
-    FSetor, FPedido: string;
+    FSetor: string;
     FMediator: iMediator;
     FDisplay : TEvDisplay;
   Public
@@ -26,7 +26,7 @@ Type
 implementation
 
 uses
-  System.SysUtils;
+  System.SysUtils, FMX.Dialogs;
 
 { TModelPedido }
 
@@ -80,12 +80,9 @@ end;
 
 function TModelPedido.ReceberPedido(FOrigem: iColleague;
   pedido: string): iColleague;
-Var Origem: iColleague;
 begin
   Result := self;
-  Origem := FOrigem;
-  self.FPedido := pedido;
-  FDisplay(Format('O pedido %s foi entregue com sucesso do setor %s', [FPedido, Origem.GetSetor]));
+  FDisplay(Format('O pedido %s foi entregue com sucesso do setor %s', [Pedido, FOrigem.GetSetor]));
 end;
 
 end.

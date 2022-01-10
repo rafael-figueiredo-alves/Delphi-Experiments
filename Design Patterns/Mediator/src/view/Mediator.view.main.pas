@@ -19,6 +19,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FMediator : iMediator;
@@ -62,11 +64,21 @@ begin
   MemoCozinha.Lines.Add(Value);
 end;
 
+procedure TFormMain.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FMediator.LiberarObjetos;
+end;
+
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   FMediator := TModelMediator.new;
   FCaixa    := TModelPedido.New(FMediator, 'Caixa').Display.Exibir(ExibirCaixa).&End;
   FCozinha  := TModelPedido.New(FMediator, 'Cozinha').Display.Exibir(ExibirCozinha).&End;
+end;
+
+procedure TFormMain.FormDestroy(Sender: TObject);
+begin
+  //FMediator.LiberarObjetos;
 end;
 
 end.

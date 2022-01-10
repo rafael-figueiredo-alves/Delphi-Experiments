@@ -9,7 +9,7 @@ uses
 Type
   TModelMediator = Class(TInterfacedObject, iMediator)
   Private
-    FListaColleagues : TDictionary<string, iColleague>;
+    FListaColleagues : TObjectDictionary<string, iColleague>;
   Public
     Constructor Create;
     Destructor Destroy; Override;
@@ -18,6 +18,7 @@ Type
     Function EnviarPedido(FOrigem, FDestino: iColleague; pedido: string)
       : iMediator;
     Function RemoveColleague(Value: string): iMediator;
+    Function LiberarObjetos : iMediator;
   End;
 
 implementation
@@ -35,13 +36,12 @@ end;
 
 constructor TModelMediator.Create;
 begin
-  FListaColleagues := TDictionary<string, iColleague>.create;
+  FListaColleagues := TObjectDictionary<string, iColleague>.create;
 end;
 
 destructor TModelMediator.Destroy;
 begin
-  FListaColleagues.Clear;
-  FListaColleagues.DisposeOf;
+
   inherited;
 end;
 
@@ -50,6 +50,11 @@ function TModelMediator.EnviarPedido(FOrigem, FDestino: iColleague;
 begin
   Result := self;
   FListaColleagues.Items[FDestino.GetSetor].ReceberPedido(FOrigem, pedido);
+end;
+
+function TModelMediator.LiberarObjetos: iMediator;
+begin
+  FListaColleagues.DisposeOf;
 end;
 
 class function TModelMediator.New: iMediator;
