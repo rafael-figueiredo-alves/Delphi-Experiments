@@ -48,6 +48,15 @@
         <Projects Include="Interpreter\Interpreter.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Iterator\Iterator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Mediator\Mediator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Memento\Memento.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -191,14 +200,41 @@
     <Target Name="Interpreter:Make">
         <MSBuild Projects="Interpreter\Interpreter.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Iterator">
+        <MSBuild Projects="Iterator\Iterator.dproj"/>
+    </Target>
+    <Target Name="Iterator:Clean">
+        <MSBuild Projects="Iterator\Iterator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Iterator:Make">
+        <MSBuild Projects="Iterator\Iterator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Mediator">
+        <MSBuild Projects="Mediator\Mediator.dproj"/>
+    </Target>
+    <Target Name="Mediator:Clean">
+        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Mediator:Make">
+        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Memento">
+        <MSBuild Projects="Memento\Memento.dproj"/>
+    </Target>
+    <Target Name="Memento:Clean">
+        <MSBuild Projects="Memento\Memento.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Memento:Make">
+        <MSBuild Projects="Memento\Memento.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command;Interpreter"/>
+        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command;Interpreter;Iterator;Mediator;Memento"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean;Interpreter:Clean"/>
+        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean;Interpreter:Clean;Iterator:Clean;Mediator:Clean;Memento:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make;Interpreter:Make"/>
+        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make;Interpreter:Make;Iterator:Make;Mediator:Make;Memento:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

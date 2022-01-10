@@ -1,0 +1,75 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Form12'
+  ClientHeight = 480
+  ClientWidth = 716
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 120.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 577.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 64.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Pedido:'
+    TabOrder = 1
+  end
+  object MemoCaixa: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 16.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 321.000000000000000000
+    Size.Height = 377.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 317.000000000000000000
+    Viewport.Height = 373.000000000000000000
+  end
+  object MemoCozinha: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 376.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 321.000000000000000000
+    Size.Height = 377.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 317.000000000000000000
+    Viewport.Height = 373.000000000000000000
+  end
+  object Button1: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 321.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Caixa para Cozinha'
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Position.X = 376.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 321.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Cozinha para Caixa'
+    OnClick = Button2Click
+  end
+end
