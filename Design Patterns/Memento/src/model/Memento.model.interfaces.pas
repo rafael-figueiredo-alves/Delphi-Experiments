@@ -17,8 +17,10 @@ type
 
  iNome = interface
    ['{64E28834-60DE-4CC0-AC44-8FFD4B80E448}']
-   Function Nome: string; overload;
-   Function Nome (Value: string) : iNome; overload;
+   Function GetNome: string;
+   Procedure SetNome (Value: string);
+   Property Nome : string read GetNome write SetNome;
+   Function Memento : iMemento<iNome>;
  end;
 
 implementation

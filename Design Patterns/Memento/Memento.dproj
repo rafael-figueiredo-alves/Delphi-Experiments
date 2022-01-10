@@ -270,6 +270,8 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="src\model\Memento.model.interfaces.pas"/>
+        <DCCReference Include="src\model\Memento.model.mementoCareTaker.pas"/>
+        <DCCReference Include="src\model\Memento.model.nomes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -1087,10 +1089,8 @@
             <Platforms>
                 <Platform value="Android">True</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimulator">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
