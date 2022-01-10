@@ -1,9 +1,9 @@
-unit Mediator2.model.user;
+unit Mediator.model.user;
 
 interface
 
 uses
-  Mediator2.model.interfaces;
+  Mediator.model.interfaces;
 
 Type
   TModelUser = Class(TInterfacedObject, iColleague)

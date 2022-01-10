@@ -5,28 +5,33 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  Mediator.model.interfaces, FMX.Memo.Types, FMX.StdCtrls, FMX.ScrollBox,
-  FMX.Memo, FMX.Controls.Presentation, FMX.Edit;
+  Mediator.model.interfaces, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
+  FMX.ListBox, FMX.Layouts, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit;
 
 type
   TFormMain = class(TForm)
     Edit1: TEdit;
     Label1: TLabel;
-    MemoCaixa: TMemo;
-    MemoCozinha: TMemo;
     Button1: TButton;
+    ListBox1: TListBox;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Edit2: TEdit;
     Button2: TButton;
+    Memo1: TMemo;
+    Button3: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FMediator : iMediator;
-    FCaixa, FCozinha: iColleague;
-    Procedure ExibirCaixa (Value: string);
-    Procedure ExibirCozinha (Value: string);
+    procedure PreencheCombos;
   public
     { Public declarations }
   end;
@@ -38,47 +43,51 @@ implementation
 
 {$R *.fmx}
 
-uses Mediator.model.pedido.mediator, Mediator.model.pedido;
-
-{ TForm12 }
+uses Mediator.model.mediator, Mediator.model.user;
 
 procedure TFormMain.Button1Click(Sender: TObject);
+Var
+ User : iColleague;
 begin
-  FCaixa
-   .EnviarPedido(FCozinha, Edit1.Text);
+  User := TModelUser.New(FMediator, edit1.Text);
+  user.Entrar;
+  ListBox1.Items.Add(Edit1.Text);
+  PreencheCombos;
 end;
 
 procedure TFormMain.Button2Click(Sender: TObject);
+Var
+  User : iColleague;
 begin
-  FCozinha
-    .EnviarPedido(FCaixa, edit1.Text);
+  User := FMediator.User(ComboBox1.Selected.Text);
+  Memo1.Lines.Add(User.Enviar(ComboBox2.Selected.Text, edit2.Text));
 end;
 
-procedure TFormMain.ExibirCaixa(Value: string);
+procedure TFormMain.Button3Click(Sender: TObject);
+Var
+ User : iColleague;
 begin
-  MemoCaixa.Lines.Add(value);
+  User := FMediator.User(ListBox1.Selected.Text);
+  User.Sair;
+  ListBox1.Items.Delete(ListBox1.Selected.Index);
+  PreencheCombos;
 end;
 
-procedure TFormMain.ExibirCozinha(Value: string);
+procedure TFormMain.PreencheCombos;
 begin
-  MemoCozinha.Lines.Add(Value);
-end;
-
-procedure TFormMain.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  FMediator.LiberarObjetos;
+  ComboBox1.Items := ListBox1.Items;
+  ComboBox2.Items := ListBox1.Items;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-  FMediator := TModelMediator.new;
-  FCaixa    := TModelPedido.New(FMediator, 'Caixa').Display.Exibir(ExibirCaixa).&End;
-  FCozinha  := TModelPedido.New(FMediator, 'Cozinha').Display.Exibir(ExibirCozinha).&End;
+  FMediator := TMediator.New;
 end;
 
 procedure TFormMain.FormDestroy(Sender: TObject);
 begin
-  //FMediator.LiberarObjetos;
+  FMediator.LiberarObjetos;
+  FMediator := nil;
 end;
 
 end.

@@ -1,77 +1,124 @@
 object FormMain: TFormMain
   Left = 0
   Top = 0
-  Caption = 'Form12'
+  Caption = 'Mediator'
   ClientHeight = 480
-  ClientWidth = 716
+  ClientWidth = 640
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
-  OnClose = FormClose
   OnDestroy = FormDestroy
   DesignerMasterStyle = 0
   object Edit1: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 0
-    Position.X = 120.000000000000000000
-    Position.Y = 16.000000000000000000
-    Size.Width = 577.000000000000000000
+    TabOrder = 1
+    Position.X = 72.000000000000000000
+    Position.Y = 13.000000000000000000
+    Size.Width = 209.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
   end
   object Label1: TLabel
-    AutoSize = True
-    Position.X = 64.000000000000000000
-    Position.Y = 20.000000000000000000
-    Size.Width = 57.000000000000000000
-    Size.Height = 16.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Pedido:'
-    TabOrder = 1
-  end
-  object MemoCaixa: TMemo
-    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    DataDetectorTypes = []
     Position.X = 16.000000000000000000
-    Position.Y = 96.000000000000000000
-    Size.Width = 321.000000000000000000
-    Size.Height = 377.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
+    Text = 'User:'
     TabOrder = 2
-    Viewport.Width = 317.000000000000000000
-    Viewport.Height = 373.000000000000000000
-  end
-  object MemoCozinha: TMemo
-    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    DataDetectorTypes = []
-    Position.X = 376.000000000000000000
-    Position.Y = 96.000000000000000000
-    Size.Width = 321.000000000000000000
-    Size.Height = 377.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-    Viewport.Width = 317.000000000000000000
-    Viewport.Height = 373.000000000000000000
   end
   object Button1: TButton
-    Position.X = 16.000000000000000000
-    Position.Y = 72.000000000000000000
-    Size.Width = 321.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
+    Position.X = 288.000000000000000000
+    Position.Y = 11.000000000000000000
     TabOrder = 5
-    Text = 'Caixa para Cozinha'
+    Text = 'Add'
     OnClick = Button1Click
   end
+  object ListBox1: TListBox
+    Position.X = 8.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 377.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 149.000000000000000000
+    Viewport.Height = 373.000000000000000000
+  end
+  object Label2: TLabel
+    Position.X = 184.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'De:'
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Position.X = 392.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'Para:'
+    TabOrder = 8
+  end
+  object Label4: TLabel
+    Position.X = 184.000000000000000000
+    Position.Y = 120.000000000000000000
+    Text = 'Mensagem:'
+    TabOrder = 9
+  end
+  object ComboBox1: TComboBox
+    Position.X = 184.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+  end
+  object ComboBox2: TComboBox
+    Position.X = 392.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 184.000000000000000000
+    Position.Y = 141.000000000000000000
+    Size.Width = 441.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
   object Button2: TButton
-    Position.X = 376.000000000000000000
-    Position.Y = 72.000000000000000000
-    Size.Width = 321.000000000000000000
+    Position.X = 544.000000000000000000
+    Position.Y = 171.000000000000000000
+    TabOrder = 3
+    Text = 'Enviar'
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 184.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 441.000000000000000000
+    Size.Height = 257.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Viewport.Width = 437.000000000000000000
+    Viewport.Height = 253.000000000000000000
+  end
+  object Button3: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 435.000000000000000000
+    Size.Width = 153.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
-    Text = 'Cozinha para Caixa'
-    OnClick = Button2Click
+    Text = 'Remove'
+    OnClick = Button3Click
   end
 end

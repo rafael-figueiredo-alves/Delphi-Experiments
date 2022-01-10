@@ -1,9 +1,9 @@
-unit Mediator2.model.mediator;
+unit Mediator.model.mediator;
 
 interface
 
 uses
-  Mediator2.model.interfaces, System.Generics.Collections;
+  Mediator.model.interfaces, System.Generics.Collections;
 
 Type
   TMediator = Class(TInterfacedObject, iMediator)

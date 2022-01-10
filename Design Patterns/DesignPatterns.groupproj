@@ -51,13 +51,10 @@
         <Projects Include="Iterator\Iterator.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Mediator\Mediator.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="Memento\Memento.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Mediator_2\Mediator2.dproj">
+        <Projects Include="Mediator\Mediator.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -212,15 +209,6 @@
     <Target Name="Iterator:Make">
         <MSBuild Projects="Iterator\Iterator.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Mediator">
-        <MSBuild Projects="Mediator\Mediator.dproj"/>
-    </Target>
-    <Target Name="Mediator:Clean">
-        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Mediator:Make">
-        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Memento">
         <MSBuild Projects="Memento\Memento.dproj"/>
     </Target>
@@ -230,23 +218,23 @@
     <Target Name="Memento:Make">
         <MSBuild Projects="Memento\Memento.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Mediator2">
-        <MSBuild Projects="Mediator_2\Mediator2.dproj"/>
+    <Target Name="Mediator">
+        <MSBuild Projects="Mediator\Mediator.dproj"/>
     </Target>
-    <Target Name="Mediator2:Clean">
-        <MSBuild Projects="Mediator_2\Mediator2.dproj" Targets="Clean"/>
+    <Target Name="Mediator:Clean">
+        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Mediator2:Make">
-        <MSBuild Projects="Mediator_2\Mediator2.dproj" Targets="Make"/>
+    <Target Name="Mediator:Make">
+        <MSBuild Projects="Mediator\Mediator.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command;Interpreter;Iterator;Mediator;Memento;Mediator2"/>
+        <CallTarget Targets="AbstractFactory;FactoryMethod;Prototype;Singleton;Builder;Bridge;Adapter;Composite;Decorator;Facade;Flyweight;Proxy;ChainsOfResponsability;Command;Interpreter;Iterator;Memento;Mediator"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean;Interpreter:Clean;Iterator:Clean;Mediator:Clean;Memento:Clean;Mediator2:Clean"/>
+        <CallTarget Targets="AbstractFactory:Clean;FactoryMethod:Clean;Prototype:Clean;Singleton:Clean;Builder:Clean;Bridge:Clean;Adapter:Clean;Composite:Clean;Decorator:Clean;Facade:Clean;Flyweight:Clean;Proxy:Clean;ChainsOfResponsability:Clean;Command:Clean;Interpreter:Clean;Iterator:Clean;Memento:Clean;Mediator:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make;Interpreter:Make;Iterator:Make;Mediator:Make;Memento:Make;Mediator2:Make"/>
+        <CallTarget Targets="AbstractFactory:Make;FactoryMethod:Make;Prototype:Make;Singleton:Make;Builder:Make;Bridge:Make;Adapter:Make;Composite:Make;Decorator:Make;Facade:Make;Flyweight:Make;Proxy:Make;ChainsOfResponsability:Make;Command:Make;Interpreter:Make;Iterator:Make;Memento:Make;Mediator:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
