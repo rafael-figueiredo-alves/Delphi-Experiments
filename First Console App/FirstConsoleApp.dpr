@@ -5,7 +5,7 @@ program FirstConsoleApp;
 {$R *.res}
 
 uses
-  System.SysUtils, crt;
+  System.SysUtils;
 
 type
  Comandos = (tpCmdExit, tpCmdOutro);
@@ -19,7 +19,6 @@ begin
    Fim := False;
    while (fim <> true) do
    begin
-     ClrScr
      writeln('Olá, tudo bem?');
      writeln('Pressione uma tecla para sair');
      Readln(retorno);
