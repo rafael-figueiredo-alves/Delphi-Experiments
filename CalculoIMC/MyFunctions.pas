@@ -10,9 +10,15 @@ implementation
 Uses system.StrUtils, System.SysUtils;
 
 function ConverteEntrada(const valor: string): Real;
-begin
-  ReplaceStr(valor, ',', '.');
-  Result := StrToFloat(valor);
+const EmptyStr = '';
+begin        
+  if valor = EmptyStr then
+   Result := 1 //Para evitar erros
+  else
+   begin 
+    ReplaceStr(valor, ',', '.');
+    Result := StrToFloat(valor);
+   end;
 end;
 
 function CalculaIMC(const Peso, Altura: Real): string;
